@@ -1,10 +1,7 @@
 <template>
     <div class="list">
         <div>这里是 list.vue</div>
-
-
         <goHome msg="111" />
-        
     </div>
 </template>
 <script>
