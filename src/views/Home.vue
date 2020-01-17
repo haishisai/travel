@@ -3,7 +3,7 @@
     <homeHeader></homeHeader>
     <home-swiper></home-swiper>
     <home-icons></home-icons>
-    
+
     <div id="test">
       <router-link to="./list">跳转 从home 路由到 list.vue → list_part1.vue 只是一个部件</router-link>
       <br />
@@ -29,21 +29,56 @@ export default {
     homeIcons
   },
   methods: {
-    getHomeInfo() {
+    getHomeInfo () {
       axios.get("/api/index.json").then(this.getHomeInfoSucc);
     },
-    getHomeInfoSucc(res) {
+    getHomeInfoSucc (res) {
       console.log(res);
     }
   },
-  mounted() {
+  mounted () {
     this.getHomeInfo();
   }
 };
 </script>
 <style lang="stylus" scoped>
+
+
+
+
+
+
+
 // .home-swiper
+
+
+
+
+
+
+
 //   transform:translate(0,-173%)
+
+
+
+
+
+
+
 // .home-icons
+
+
+
+
+
+
+
 //   transform:translate(0,55%)
+
+
+
+
+
+
+
 </style>
