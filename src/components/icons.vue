@@ -14,6 +14,7 @@
                     <div class="icon-txt">{{item.desc}}</div>
                 </div>                
             </swiper-slide>
+            <!-- <div class="swiper-pagination" slot="pagination"></div> -->
         </swiper>
                
     </div>
@@ -24,7 +25,10 @@ export default {
     data () {
         return {
             swiperOption1: {
-                pagination: '.swiper-pagination',
+                pagination: {
+                // el: '.swiper-pagination',
+                // clickable: true
+            },
                 loop: false,
                 autoplay: false
             },

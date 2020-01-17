@@ -41,3 +41,9 @@ export default {
   }
 };
 </script>
+<style lang="stylus" scoped>
+// .home-swiper
+//   transform:translate(0,-173%)
+// .home-icons
+//   transform:translate(0,55%)
+</style>
