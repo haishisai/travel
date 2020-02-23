@@ -9,7 +9,7 @@
       <br />
       <router-link to="./test">test page</router-link>
       <br />
-      <router-link to="./test2">test page2 band</router-link>
+      <router-link to="./test2">test page2</router-link>
     </div>
   </div>
 </template>

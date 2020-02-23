@@ -9,8 +9,17 @@ import './assets/stylus/iconfont.css'
 import 'swiper/dist/css/swiper.css'
 
 Vue.config.productionTip = false
+Vue.prototype.globalClick = function (callback){
+    document.onclick = function(){
+        callback()
+    }
+}
+
 fastClick.attach(document.body)
 Vue.use(VueAwesomeSwiper)
+
+
+
 
 new Vue({
   router,
