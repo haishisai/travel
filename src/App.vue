@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <!-- 当前路由地址所对应的内容 -->
-    <router-view />
+    <router-view @page-change="console.log(11)" />
     <div v-on:click="aaa">index click test</div>
     <bar v-show = "barKey" :barShow="barKey" ></bar>
   </div>
@@ -28,12 +28,23 @@ export default {
     }
   },
   created () {
-    //  this.aaa()
+    
   },
   mounted () {
       this.globalClick(this.pdclick)
       // 全局点击的绑定
-  }
+  },
+  watch: {
+        '$route.path': function(newVal) {
+            //里面有路由的信息，根据路由信息做相关处理
+            
+            if(newVal == '/list'){
+                this.barKey = false;
+            }else{
+                this.barKey = true;
+            }
+        }
+  },
 }
 </script>
 <style>

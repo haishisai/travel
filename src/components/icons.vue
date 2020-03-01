@@ -84,7 +84,7 @@ export default {
   //         console.log(111)
   // }
   mounted () {
-    console.log(this.pages)
+    // console.log(this.pages)
   }
 }
 </script>

@@ -5,7 +5,9 @@
     <home-icons></home-icons>
 
     <div id="test">
-      <router-link to="./list">跳转 从home 路由到 list.vue → list_part1.vue 只是一个部件</router-link>
+      <router-link
+        to="./list"
+      >跳转 从home 路由到 list.vue → list_part1.vue 只是一个部件</router-link>
       <br />
       <router-link to="./test">test page</router-link>
       <br />
@@ -30,18 +32,28 @@ export default {
   },
   methods: {
     getHomeInfo () {
-      axios.get("/api/index.json").then(this.getHomeInfoSucc);
+    //   axios.get("/api/index.json").then(this.getHomeInfoSucc);
+      axios.get("http://yuanjin.tech:5005/api/movie?page=1&limit=3").then(this.getHomeInfoSucc);
     },
-    getHomeInfoSucc (res) {
-      console.log(res);
-    }
+    // getHomeInfoSucc (res) {
+    // //   console.log(res);
+    // },
   },
+  
   mounted () {
     this.getHomeInfo();
   }
 };
 </script>
 <style lang="stylus" scoped>
+
+
+
+
+
+
+
+
 
 
 
@@ -57,7 +69,23 @@ export default {
 
 
 
+
+
+
+
+
+
+
+
 //   transform:translate(0,-173%)
+
+
+
+
+
+
+
+
 
 
 
@@ -73,7 +101,23 @@ export default {
 
 
 
+
+
+
+
+
+
+
+
 //   transform:translate(0,55%)
+
+
+
+
+
+
+
+
 
 
 
