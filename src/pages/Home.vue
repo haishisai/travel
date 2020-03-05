@@ -4,23 +4,15 @@
     <home-swiper></home-swiper>
     <home-icons></home-icons>
 
-    <div id="test">
-      <router-link
-        to="./list"
-      >跳转 从home 路由到 list.vue → list_part1.vue 只是一个部件</router-link>
-      <br />
-      <router-link to="./test">test page</router-link>
-      <br />
-      <router-link to="./test2">test page2</router-link>
-    </div>
+    
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import homeHeader from "../components/header.vue";
-import homeSwiper from "../components/swiper.vue";
-import homeIcons from "../components/icons.vue";
+import homeHeader from "../components/home/header.vue";
+import homeSwiper from "../components/home/swiper.vue";
+import homeIcons from "../components/home/icons.vue";
 import axios from "axios";
 export default {
   name: "home",

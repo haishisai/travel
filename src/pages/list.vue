@@ -6,7 +6,7 @@
 </template>
 <script>
 // @ is an alias to /src
-import goHome from '@/components/goHome.vue'
+import goHome from '@/components/app/goHome.vue'
 export default {
     name: 'list',
     components: {
