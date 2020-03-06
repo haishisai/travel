@@ -1,6 +1,8 @@
+const path = require('path')
+
 module.exports = {
     publicPath: './',
-    // baseUrl: BASE_URL,
+    // baseUrl: BASE_URL,  vue/cli 3.3之前
     devServer: {
         proxy:{
             '/api': {
@@ -10,5 +12,12 @@ module.exports = {
                 }
             }
         }
+    },
+    configureWebpack: {
+      resolve: {
+        alias: {
+          'styles': path.join(__dirname, 'src/assets/styles')
+        }
+      }
     }
 }

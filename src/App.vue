@@ -30,7 +30,7 @@ export default {
 
   },
   mounted () {
-    this.globalClick(this.pdclick)
+    // this.globalClick(this.pdclick)
     // 全局点击的绑定
   },
   watch: {

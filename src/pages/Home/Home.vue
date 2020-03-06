@@ -10,17 +10,16 @@
 
 <script>
 // @ is an alias to /src
-import homeHeader from "../components/home/header.vue";
-import homeSwiper from "../components/home/swiper.vue";
-import homeIcons from "../components/home/icons.vue";
+import HomeHeader from "./components/Header.vue";
+import HomeSwiper from "./components/Swiper.vue";
+import HomeIcons from "./components/Icons.vue";
 import axios from "axios";
 export default {
-  name: "home",
+  name: "Home",
   components: {
-    homeHeader: homeHeader,
-    //可以直接写个变量名注册  效果  aaa1 ：aaa 一样
-    homeSwiper,
-    homeIcons
+    HomeHeader,
+    HomeSwiper,
+    HomeIcons
   },
   methods: {
     getHomeInfo () {
