@@ -26,8 +26,11 @@ export default {
             clickable: true
         },
         loop: true,
-        autoplay: 2000,
-        autoplayDisableOnInteraction: false
+        autoplay: {
+          delay: 2000,
+          disableOnInteraction: false, //    拖動 就自動播放 swiper4
+        },
+        // autoplayDisableOnInteraction: false   拖動 就自動播放 swiper3
       },
       swiperList: [{
         id: "0001",
