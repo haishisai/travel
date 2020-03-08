@@ -3,6 +3,7 @@ const path = require('path')
 module.exports = {
     publicPath: './',
     // baseUrl: BASE_URL,  vue/cli 3.3之前
+    // publicPath: process.env.NODE_ENV === "production" ? "./" : "/",
     devServer: {
         proxy:{
             '/api': {

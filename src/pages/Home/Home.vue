@@ -1,9 +1,12 @@
 <template>
   <div class="home">
-    <homeHeader></homeHeader>
-    <home-swiper></home-swiper>
-    <home-icons></home-icons>
-
+    <HomeHeader />
+    <HomeSwiper />
+    
+    <HomeIcons />
+    <Recommend />
+    <WhereGo />
+    
     
   </div>
 </template>
@@ -13,13 +16,17 @@
 import HomeHeader from "./components/Header.vue";
 import HomeSwiper from "./components/Swiper.vue";
 import HomeIcons from "./components/Icons.vue";
+import Recommend from "./components/Recommend.vue";
+import WhereGo from "./components/WhereGo.vue";
 import axios from "axios";
 export default {
   name: "Home",
   components: {
     HomeHeader,
     HomeSwiper,
-    HomeIcons
+    HomeIcons,
+    Recommend,
+    WhereGo,
   },
   methods: {
     getHomeInfo () {

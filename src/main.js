@@ -7,6 +7,7 @@ import router from './router.js'
 
 import 'styles/reset.css'
 import 'styles/iconfont.css'
+import 'styles/border.css'
 import 'swiper/dist/css/swiper.css'
 
 // // 全局点击事件 应该不推荐用
