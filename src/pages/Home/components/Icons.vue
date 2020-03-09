@@ -125,7 +125,9 @@ export default {
     .icon-txt
       // background:green
       text-align: center
-      font-size: 14px
+      font-size: .30rem
+      height: .32rem
+      line-height: .32rem 
       color: #333
       ellipsis()
 </style>

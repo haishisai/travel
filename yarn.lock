@@ -9568,6 +9568,11 @@ toposort@^1.0.0:
   resolved "https://registry.npm.taobao.org/toposort/download/toposort-1.0.7.tgz#2e68442d9f64ec720b8cc89e6443ac6caa950029"
   integrity sha1-LmhELZ9k7HILjMieZEOsbKqVACk=
 
+touchjs@^0.2.14:
+  version "0.2.14"
+  resolved "https://registry.yarnpkg.com/touchjs/-/touchjs-0.2.14.tgz#f5585b4ea14809bfc4edb40a51e626d01851742e"
+  integrity sha1-9VhbTqFICb/E7bQKUeYm0BhRdC4=
+
 tough-cookie@^2.3.3:
   version "2.5.0"
   resolved "https://registry.npm.taobao.org/tough-cookie/download/tough-cookie-2.5.0.tgz#cd9fb2a0aa1d5a12b473bd9fb96fa3dcff65ade2"

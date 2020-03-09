@@ -35,6 +35,7 @@ export default {
   background-color: $bgColor
   box-sizing: border-box
   position: fixed
+  z-index: 1000
   bottom: 0
   display: flex
   justify-content: space-evenly

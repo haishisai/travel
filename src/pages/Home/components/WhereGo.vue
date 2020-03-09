@@ -40,20 +40,23 @@ export default {
 @import '~styles/varibles.styl'
   .box
     .title
-      height: .7rem
-      line-height: .7rem
+      height: .8rem
+      line-height: .85rem
       width: 100%
       background-color: #F5F5F5
-      padding-left: .2rem
+      padding-left: .3rem
+      font-size: .3rem
     .content
       // margin-top: .1rem 
       img
         width: 100%
       .content-t
-        margin: .2rem
+        margin: .2rem .2rem .1rem 
         font-size: .24rem
       .content-desc
-        margin: .2rem
+        margin: .1rem .2rem .1rem 
+        height: .24rem
+        line-height: .24rem 
         font-size: .20rem
         color: #616161
         ellipsis()

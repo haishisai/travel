@@ -1,6 +1,10 @@
 <template>
-  <ul class="box">
-    <li v-for="(item,index) of items" :key="index" >
+  <dl class="box">
+    <dt>
+      <img src="https://imgs.qunarzz.com/piao/fusion/1711/89/ebc329f16c55bb02.png" alt="">
+      <span>猜你喜欢</span>
+    </dt>
+    <dd v-for="(item,index) of items" :key="index" >
       <div class="content">
         <div class="pic">
           <img
@@ -16,7 +20,7 @@
           </div>
           <div class="line3">
             <div class="price">
-              <span class="price-1" >￥</span>
+              <span class="price-1" >¥</span>
               <span class="price-2">{{item.price}}</span>
               <span class="price-3">起</span>
             </div>
@@ -26,8 +30,8 @@
         </div>
       </div>
       <div class="line border-top"></div>
-    </li>
-  </ul>
+    </dd>
+  </dl>
 </template>
 <script>
 export default {
@@ -78,6 +82,15 @@ export default {
 </script>
 <style lang="stylus" scoped>
 .box
+  dt
+    padding-left: .2rem
+    margin-top: .2rem
+    img
+      width: .3rem
+      height: .3rem
+      margin-top: -0.07rem
+    span
+      margin-left: .1rem
   font-family: Arial, 'Microsoft Yahei', 'Helvetica Neue', Helvetica, sans-serif
   .content
     overflow: hidden

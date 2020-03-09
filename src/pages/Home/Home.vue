@@ -4,10 +4,11 @@
     <HomeSwiper />
     
     <HomeIcons />
+    <Ranking />
     <Recommend />
     <WhereGo />
     
-    
+    <div style="height:30px" ></div>
   </div>
 </template>
 
@@ -17,6 +18,7 @@ import HomeHeader from "./components/Header.vue";
 import HomeSwiper from "./components/Swiper.vue";
 import HomeIcons from "./components/Icons.vue";
 import Recommend from "./components/Recommend.vue";
+import Ranking from "./components/Ranking.vue";
 import WhereGo from "./components/WhereGo.vue";
 import axios from "axios";
 export default {
@@ -27,6 +29,7 @@ export default {
     HomeIcons,
     Recommend,
     WhereGo,
+    Ranking
   },
   methods: {
     getHomeInfo () {
