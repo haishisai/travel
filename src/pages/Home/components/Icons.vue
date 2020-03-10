@@ -1,6 +1,6 @@
 <template>
   <div class="icons-box">
-    <swiper :options="swiperOption1">
+    <swiper :options="swiperOption1" v-if="iconsData.length" >
       <swiper-slide
         v-for="(msg,index) of pages"
         :key="index"
@@ -36,49 +36,15 @@ export default {
         loop: false,
         autoplay: false
       },
-      iconList: [{
-        id: "0001",
-        imgUrl: "http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png",
-        desc: "一日游"
-      }, {
-        id: "0002",
-        imgUrl: "http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png",
-        desc: "景点门票"
-      }, {
-        id: "0003",
-        imgUrl: "http://img1.qunarzz.com/piao/fusion/1803/de/f26be47a6bf02a02.png",
-        desc: "上海迪斯尼"
-      }, {
-        id: "0004",
-        imgUrl: "https://img1.qunarzz.com/piao/fusion/1810/50/26ffa31b56646402.png",
-        desc: "上海海昌"
-      }, {
-        id: "0005",
-        imgUrl: "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/201912/9480e99a101564a22dfff0c4b9d0861c.png",
-        desc: "上海杜莎"
-      }, {
-        id: "0006",
-        imgUrl: "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20194/3ef092d0a89ffddb7f781cda30c8ae49.png",
-        desc: "错峰出游"
-      }, {
-        id: "0007",
-        imgUrl: "http://img1.qunarzz.com/piao/fusion/1803/ab/6f7d6e44963c9302.png",
-        desc: "温泉滑雪温泉滑雪温泉滑雪"
-      }, {
-        id: "0008",
-        imgUrl: "http://img1.qunarzz.com/piao/fusion/1803/3e/86314b2af03b7502.png",
-        desc: "黄浦江游船"
-      }, {
-        id: "0009",
-        imgUrl: "http://img1.qunarzz.com/piao/fusion/1803/3e/86314b2af03b7502.png",
-        desc: "test"
-      }]
     }
+  },
+  props:{
+    iconsData: Array
   },
   computed: {
     pages () {
       var pages = []
-      this.iconList.forEach((item, index) => {
+      this.iconsData.forEach((item, index) => {
         var page = Math.floor(index / 8)
         //如果pages 第一项没有数据，则赋值一个空数组
         if (!pages[page]) {

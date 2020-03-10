@@ -1,12 +1,12 @@
 <template>
   <div class="home">
-    <HomeHeader />
-    <HomeSwiper />
+    <HomeHeader :city="city" />
+    <HomeSwiper :swiperData="swiperData" />
     
-    <HomeIcons />
-    <Ranking />
-    <Recommend />
-    <WhereGo />
+    <HomeIcons :iconsData="iconsData" />
+    <Ranking :items="rankingData" />
+    <Recommend :items="recommendData" />
+    <WhereGo :items="whereGoData" />
     
     <div style="height:30px" ></div>
   </div>
@@ -31,99 +31,47 @@ export default {
     WhereGo,
     Ranking
   },
+  data () {
+    return {
+      city: '',
+      swiperData: [],
+      iconsData: [],
+      recommendData: [],
+      whereGoData: [],
+      rankingData: []
+    }
+  },
   methods: {
     getHomeInfo () {
-    //   axios.get("/api/index.json").then(this.getHomeInfoSucc);
-      axios.get("http://yuanjin.tech:5005/api/movie?page=1&limit=3").then(this.getHomeInfoSucc);
+      axios.get("/api/index.json").then(this.getHomeInfoSucc);
     },
-    // getHomeInfoSucc (res) {
-    // //   console.log(res);
-    // },
+    getHomeInfoSucc (res) {
+      if(res.data && res.status === 200){
+        let obj = ''
+        if(typeof(res.data) === String ){
+          obj = eval('('+res.data+')')
+          // var obj = JSON.parse(res.data)  這個要求高 多逗號就報錯了
+        }else{
+          obj = res.data
+        }
+        this.city = obj.city;
+        this.swiperData = obj.data.swiperData;
+        this.iconsData = obj.data.iconsData;
+        this.recommendData = obj.data.recommendData;
+        this.whereGoData = obj.data.whereGoData;
+        this.rankingData = obj.data.rankingData;
+        console.log(obj.data.rankingData);
+      }
+    },
   },
-  
-  mounted () {
+  created () {
     this.getHomeInfo();
+  },
+  mounted () {
+    
   }
 };
 </script>
 <style lang="stylus" scoped>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// .home-swiper
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//   transform:translate(0,-173%)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// .home-icons
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//   transform:translate(0,55%)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </style>

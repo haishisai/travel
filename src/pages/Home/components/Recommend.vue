@@ -4,7 +4,7 @@
       <img src="https://imgs.qunarzz.com/piao/fusion/1711/89/ebc329f16c55bb02.png" alt="">
       <span>猜你喜欢</span>
     </dt>
-    <dd v-for="(item,index) of items" :key="index" >
+    <dd v-for="(item,index) of items" :key="index">
       <div class="content">
         <div class="pic">
           <img
@@ -13,7 +13,7 @@
           >
         </div>
         <div class="desc">
-          <div class="title">{{item.titel}}</div>
+          <div class="title">{{item.title}}</div>
           <div class="posts">
             <span>星星插件</span>
             <span class="number">{{item.postNumber}}条评论</span>
@@ -36,47 +36,8 @@
 <script>
 export default {
   name: 'Recommend',
-  data () {
-    return {
-      items: [
-        {
-          img: 'https://imgs.qunarzz.com/sight/p0/1607/7c/7cda8b6782dabd80b4.img.jpg_200x200_2039e660.jpg',
-          titel:'上海迪士尼乐园',
-          postNum: '295187',
-          price: '500',
-          area: '浦东新区',
-          txt: '全球最大的迪士尼城堡',
-          postNumber: '23454'
-        },
-        {
-          img: 'https://imgs.qunarzz.com/sight/p0/2001/f6/f66fb64d494a4d78a3.img.jpg_200x200_005ebaf5.jpg',
-          titel:'上海海昌海洋公园',
-          postNum: '2937',
-          price: '123',
-          area: '浦东新区',
-          txt: '这里特别受欢迎哟(๑‾ ꇴ ‾๑)',
-          postNumber: '23454'
-        },
-        {
-          img: 'https://imgs.qunarzz.com/sight/p0/1607/7c/7cda8b6782dabd80b4.img.jpg_200x200_2039e660.jpg',
-          titel:'东方明珠',
-          postNum: '29511187',
-          price: '1500',
-          area: '浦东新区',
-          txt: '259米透明悬空观光廊了解一下~',
-          postNumber: '23454'
-        },
-        {
-          img: 'https://imgs.qunarzz.com/sight/p0/1904/20/20dd895e78548b50a3.img.jpg_200x200_348c3831.jpg',
-          titel:'上海海昌海洋公园',
-          postNum: '295187',
-          price: '500',
-          area: '浦东新区',
-          txt: '这里特别受欢迎哟(๑‾ ꇴ ‾๑)',
-          postNumber: '23454'
-        }
-      ]
-    }
+  props:{
+    items: Array
   }
 }
 </script>

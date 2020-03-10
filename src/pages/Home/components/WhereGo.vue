@@ -14,25 +14,8 @@
 <script>
 export default {
   name: 'WhereGo',
-  data () {
-    return {
-      items: [
-        {
-          img: 'https://imgs.qunarzz.com/sight/source/1505/7d/df6ff468331c43.jpg_r_640x214_1f3783d0.jpg',
-          t: '上海必打卡',
-          desc: '中西合璧，现代和传统各有各的精彩'
-        },{
-          img: 'https://imgs.qunarzz.com/sight/source/1505/7d/df6ff468331c43.jpg_r_640x214_1f3783d0.jpg',
-          t: '上海看花',
-          desc: '这个好天气，一起去看花吧'
-        },
-        {
-          img: 'https://imgs.qunarzz.com/sight/source/1505/7b/2a6b0ce087f0e5.jpg_r_640x214_5c76b115.jpg',
-          t: '上海城市观光',
-          desc: '来这里寻找你所不认识的魔都 ，感受云端漫步，品味老上海风情，享受休闲时光'
-        }
-      ]
-    }
+  props: {
+    items: Array
   }
 }
 </script>

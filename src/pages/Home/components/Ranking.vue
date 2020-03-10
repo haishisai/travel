@@ -38,71 +38,38 @@ export default {
   name: 'Ranking',
   data () {
     return {
-      items: [
-        {
-          id: '1',
-          img: 'https://imgs.qunarzz.com/tuan/team2/1507/2c/83e0e0e7ae082a.jpg_250x250_87692c41.jpg',
-          txt: '东方明珠',
-          price: '123',
-        },
-        {
-          id: '2',
-          img: 'https://imgs.qunarzz.com/sight/p0/2001/f6/f66fb64d494a4d78a3.img.jpg_250x250_434440d2.jpg',
-          txt: '上海海昌海洋公园',
-          price: '111'
-        },
-        {
-          id: '3',
-          img: 'https://imgs.qunarzz.com/sight/p0/201310/08/fde0fbd156f10f40c8d65eac.jpg_250x250_9cdb90f5.jpg',
-          txt: '上海人民广场',
-          price: '12'
-        },
-        {
-          id: '4',
-          img: 'https://imgs.qunarzz.com/sight/p0/1803/26/2645c1b2ee526285a3.water.jpg_250x250_c9ab8185.jpg',
-          txt: '黄浦江游览（十六铺码头）',
-          price: '233'
-        },
-        {
-          id: '5',
-          img: 'https://imgs.qunarzz.com/sight/p0/2001/e1/e113dd96c55c1f2ba3.img.jpg_250x250_4d1215da.jpg',
-          txt: '上海野生动物园',
-          price: '12.31'
-        },
-        {
-          id: '6',
-          img: 'https://imgs.qunarzz.com/sight/p0/1704/c9/c936f3fccfc6d7eda3.img.jpg_250x250_ca7fa9d0.jpg',
-          txt: '上海杜莎夫人蜡像馆',
-          price: '121'
-        }
-      ],
-      repair:{
-        id: '00abdfer123',
-        txt: '',
-        price: ''
-      },
       swiperOption: {
         scrollbar: {
           el: '.swiper-scrollbar',
           // hide: true,
         },
         freeMode: true,
-        spaceBetween: 0,
+        spaceBetween: 10,
         slidesPerView: 3.8
       }
-      
     }
+  },
+  props:{
+    items: Array
   },
   methods:{
     rankIcon () {
+      if(this.items.length==0){
+        return
+      }
       for(let i=0;i<3;i++){
         this.items[i].iconShow = true
         this.items[i].IconUrl = require(`../../../assets/img/rank${i+1}.png`)
       }
     }
   },
+  watch:{
+    '$props.items': function(){
+      this.rankIcon()
+    }
+  },
   created () {
-    this.rankIcon()
+    
   },
   mounted () {
     

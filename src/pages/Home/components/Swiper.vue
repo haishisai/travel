@@ -1,9 +1,9 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper" v-if="swiperData.length" >
     <swiper :options="swiperOption">
       <!-- slides -->
       <swiper-slide
-        v-for="item of swiperList"
+        v-for="item of swiperData"
         :key="item.id"
       >
         <img
@@ -41,18 +41,14 @@ export default {
           disableOnInteraction: false, //    拖動 就自動播放 swiper4
         },
         // autoplayDisableOnInteraction: false   拖動 就自動播放 swiper3
-      },
-      swiperList: [{
-        id: "0001",
-        url: "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20201/8c458e9fe5b5f4575b1d7ec0489a9ff8.jpg_750x200_f0fbf511.jpg"
-      }, {
-        id: "0002",
-        url: "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/201912/071210d83e8ab09d363446166db5d34e.jpg_750x200_41285396.jpg"
-      }, {
-        id: "0003",
-        url: "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20201/9c4bd16baa22bcd6810b714b225b5c33.jpg_750x200_95d6ad38.jpg"
-      }]
+      }
     };
+  },
+  props:{
+    swiperData: Array
+  },
+  mounted(){
+    console.log(this.swiperData)
   }
 };
 </script>

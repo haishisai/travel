@@ -1,1 +1,140 @@
-public data  pppdddd
+{
+  "ret": "true",
+  "city": "上海",
+  "data": {
+    "swiperData":[{
+      "id": "0001",
+      "url": "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20201/8c458e9fe5b5f4575b1d7ec0489a9ff8.jpg_750x200_f0fbf511.jpg"
+    }, {
+      "id": "0002",
+      "url": "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/201912/071210d83e8ab09d363446166db5d34e.jpg_750x200_41285396.jpg"
+    }, {
+      "id": "0003",
+      "url": "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20201/9c4bd16baa22bcd6810b714b225b5c33.jpg_750x200_95d6ad38.jpg"
+    }],
+    "iconsData":[{
+      "id": "0001",
+      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png",
+      "desc": "一日游"
+    }, {
+      "id": "0002",
+      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png",
+      "desc": "景点门票"
+    }, {
+      "id": "0003",
+      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1803/de/f26be47a6bf02a02.png",
+      "desc": "上海迪斯尼"
+    }, {
+      "id": "0004",
+      "imgUrl": "https://img1.qunarzz.com/piao/fusion/1810/50/26ffa31b56646402.png",
+      "desc": "上海海昌"
+    }, {
+      "id": "0005",
+      "imgUrl": "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/201912/9480e99a101564a22dfff0c4b9d0861c.png",
+      "desc": "上海杜莎"
+    }, {
+      "id": "0006",
+      "imgUrl": "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20194/3ef092d0a89ffddb7f781cda30c8ae49.png",
+      "desc": "错峰出游"
+    }, {
+      "id": "0007",
+      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1803/ab/6f7d6e44963c9302.png",
+      "desc": "温泉滑雪温泉滑雪温泉滑雪"
+    }, {
+      "id": "0008",
+      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1803/3e/86314b2af03b7502.png",
+      "desc": "黄浦江游船"
+    }, {
+      "id": "0009",
+      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1803/3e/86314b2af03b7502.png",
+      "desc": "test"
+    }],
+    "rankingData":[{
+      "id": "1",
+      "img": "https://imgs.qunarzz.com/tuan/team2/1507/2c/83e0e0e7ae082a.jpg_250x250_87692c41.jpg",
+      "txt": "东方明珠",
+      "price": "123"
+    },
+    {
+      "id": "2",
+      "img": "https://imgs.qunarzz.com/sight/p0/2001/f6/f66fb64d494a4d78a3.img.jpg_250x250_434440d2.jpg",
+      "txt": "上海海昌海洋公园",
+      "price": "111"
+    },
+    {
+      "id": "3",
+      "img": "https://imgs.qunarzz.com/sight/p0/201310/08/fde0fbd156f10f40c8d65eac.jpg_250x250_9cdb90f5.jpg",
+      "txt": "上海人民广场",
+      "price": "12"
+    },
+    {
+      "id": "4",
+      "img": "https://imgs.qunarzz.com/sight/p0/1803/26/2645c1b2ee526285a3.water.jpg_250x250_c9ab8185.jpg",
+      "txt": "黄浦江游览（十六铺码头）",
+      "price": "233"
+    },
+    {
+      "id": "5",
+      "img": "https://imgs.qunarzz.com/sight/p0/2001/e1/e113dd96c55c1f2ba3.img.jpg_250x250_4d1215da.jpg",
+      "txt": "上海野生动物园",
+      "price": "12.31"
+    },
+    {
+      "id": "6",
+      "img": "https://imgs.qunarzz.com/sight/p0/1704/c9/c936f3fccfc6d7eda3.img.jpg_250x250_ca7fa9d0.jpg",
+      "txt": "上海杜莎夫人蜡像馆",
+      "price": "121"
+    }],
+    "recommendData":[{
+      "img": "https://imgs.qunarzz.com/sight/p0/1607/7c/7cda8b6782dabd80b4.img.jpg_200x200_2039e660.jpg",
+      "title":"上海迪士尼乐园",
+      "postNum": "295187",
+      "price": "500",
+      "area": "浦东新区",
+      "txt": "全球最大的迪士尼城堡",
+      "postNumber": "23454"
+    },
+    {
+      "img": "https://imgs.qunarzz.com/sight/p0/2001/f6/f66fb64d494a4d78a3.img.jpg_200x200_005ebaf5.jpg",
+      "title":"上海海昌海洋公园",
+      "postNum": "2937",
+      "price": "123",
+      "area": "浦东新区",
+      "txt": "这里特别受欢迎哟(๑‾ ꇴ ‾๑)",
+      "postNumber": "23454"
+    },
+    {
+      "img": "https://imgs.qunarzz.com/sight/p0/1607/7c/7cda8b6782dabd80b4.img.jpg_200x200_2039e660.jpg",
+      "title":"东方明珠",
+      "postNum": "29511187",
+      "price": "1500",
+      "area": "浦东新区",
+      "txt": "259米透明悬空观光廊了解一下~",
+      "postNumber": "23454"
+    },
+    {
+      "img": "https://imgs.qunarzz.com/sight/p0/1904/20/20dd895e78548b50a3.img.jpg_200x200_348c3831.jpg",
+      "title":"上海海昌海洋公园",
+      "postNum": "295187",
+      "price": "500",
+      "area": "浦东新区",
+      "txt": "这里特别受欢迎哟(๑‾ ꇴ ‾๑)",
+      "postNumber": "23454"
+    }],
+    "whereGoData":[{
+      "img": "https://imgs.qunarzz.com/sight/source/1505/7d/df6ff468331c43.jpg_r_640x214_1f3783d0.jpg",
+      "t": "上海必打卡",
+      "desc": "中西合璧，现代和传统各有各的精彩"
+    },{
+      "img": "https://imgs.qunarzz.com/sight/source/1505/7d/df6ff468331c43.jpg_r_640x214_1f3783d0.jpg",
+      "t": "上海看花",
+      "desc": "这个好天气，一起去看花吧"
+    },
+    {
+      "img": "https://imgs.qunarzz.com/sight/source/1505/7b/2a6b0ce087f0e5.jpg_r_640x214_5c76b115.jpg",
+      "t": "上海城市观光",
+      "desc": "来这里寻找你所不认识的魔都 ，感受云端漫步，品味老上海风情，享受休闲时光"
+    }]
+  }
+
+}
