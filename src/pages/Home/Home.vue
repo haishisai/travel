@@ -60,7 +60,6 @@ export default {
         this.recommendData = obj.data.recommendData;
         this.whereGoData = obj.data.whereGoData;
         this.rankingData = obj.data.rankingData;
-        console.log(obj.data.rankingData);
       }
     },
   },
