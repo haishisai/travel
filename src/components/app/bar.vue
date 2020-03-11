@@ -8,13 +8,13 @@
     </div>
     <div>
       <router-link
-        :to="{name:'list'}"
+        :to="{name:'List'}"
         class="rl"
       >list</router-link>
     </div>
     <div>
       <router-link
-        :to="{name:'test'}"
+        :to="{name:'Test'}"
         class="rl"
       >test</router-link>
     </div>

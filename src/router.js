@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './pages/Home/Home.vue'
-import list from './pages/list.vue'
-import test from './components/test/test.vue'
+import List from './pages/List/List.vue'
+import Test from './components/Test/Test.vue'
 
 Vue.use(Router)
 
@@ -18,13 +18,13 @@ export default new Router({
     },
     {
       path: '/list',
-      name: 'list',
-      component: list
+      name: 'List',
+      component: List
     },
     {
       path: '/test',
-      name: 'test',
-      component: test
+      name: 'Test',
+      component: Test
     }
   ]
 })
