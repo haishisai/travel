@@ -2,19 +2,19 @@
   <div id="app">
     <!-- 当前路由地址所对应的内容 -->
     <router-view />
-    <bar
+    <Bar
       v-show="barKey"
       :barShow="barKey"
-    ></bar>
+    />
   </div>
 </template>
 <script>
 // @ is an alias to /src
-import bar from "./components/app/bar.vue";
+import Bar from "./components/app/Bar.vue";
 export default {
   name: 'index',
   components: {
-    bar
+    Bar
   },
   data () {
     return {

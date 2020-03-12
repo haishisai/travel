@@ -1,5 +1,6 @@
 <template>
     <div class="hospital-info">
+      <span>其他</span>
       <div 
       @mouseenter="mouseenter" 
       @mouseleave="mouseleave"  
