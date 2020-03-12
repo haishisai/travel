@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './pages/Home/Home.vue'
 import List from './pages/List/List.vue'
+import Citys from './pages/Citys/Citys.vue'
 import Test from './components/Test/Test.vue'
 
 Vue.use(Router)
@@ -20,6 +21,11 @@ export default new Router({
       path: '/list',
       name: 'List',
       component: List
+    },
+    {
+      path: '/citys',
+      name: 'Citys',
+      component: Citys
     },
     {
       path: '/test',

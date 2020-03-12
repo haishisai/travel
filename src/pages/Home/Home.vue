@@ -43,7 +43,8 @@ export default {
   },
   methods: {
     getHomeInfo () {
-      axios.get("/api/index.json").then(this.getHomeInfoSucc);
+      axios.get("/travel/dist/mock/index.json").then(this.getHomeInfoSucc);
+      // axios.get("/api/index.json").then(this.getHomeInfoSucc);
     },
     getHomeInfoSucc (res) {
       if(res.data && res.status === 200){
@@ -67,7 +68,14 @@ export default {
     this.getHomeInfo();
   },
   mounted () {
-    
+    // test
+    // axios.get("http://localhost:3000/flowers")
+    // .then((res)=>{
+    //   console.log(res)
+    // })
+    // .catch((err)=>{
+    //   console.log('错误'+err)
+    // });
   }
 };
 </script>

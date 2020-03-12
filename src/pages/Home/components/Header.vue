@@ -8,8 +8,11 @@
       输入城市/景点
     </div>
     <div class="header-right">
-      <span class="iconfont icon-jiantou"></span>
-      {{city}}
+      <router-link :to="{name:'Citys'}" >
+        <span class="iconfont icon-jiantou"></span>
+        {{city}}
+      </router-link>
+      
     </div>
   </div>
 </template>
@@ -46,5 +49,6 @@ export default {
     float: right
     width: 1.24rem
     text-align: center
-    color: #fff
+    a
+      color: #fff
 </style>
