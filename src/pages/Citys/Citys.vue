@@ -4,7 +4,7 @@
         <Search />
         <GoHome />
         <CitysList />
-
+        <Alphabat />
     </div>
 </template>
 <script>
@@ -13,13 +13,15 @@ import GoHome from '@/components/app/GoHome.vue'
 import Header from './components/Header.vue'
 import Search from './components/Search.vue'
 import CitysList from './components/CitysList.vue'
+import Alphabat from './components/Alphabat.vue'
 export default {
     name: 'list',
     components: {
         GoHome,
         Header,
         Search,
-        CitysList
+        CitysList,
+        Alphabat
     }
 }
 </script>

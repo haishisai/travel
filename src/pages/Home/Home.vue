@@ -2,7 +2,6 @@
   <div class="home">
     <HomeHeader :city="city" />
     <HomeSwiper :swiperData="swiperData" />
-    
     <HomeIcons :iconsData="iconsData" />
     <Ranking :items="rankingData" />
     <Recommend :items="recommendData" />
