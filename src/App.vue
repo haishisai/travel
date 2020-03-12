@@ -2,23 +2,23 @@
   <div id="app">
     <!-- 当前路由地址所对应的内容 -->
     <router-view />
-    <Bar
-      v-show="barKey"
-      :barShow="barKey"
+    <NaviBar
+      v-show="NaviBarKey"
+      :NaviBarShow="NaviBarKey"
     />
   </div>
 </template>
 <script>
 // @ is an alias to /src
-import Bar from "./components/app/Bar.vue";
+import NaviBar from "./components/app/NaviBar.vue";
 export default {
   name: 'index',
   components: {
-    Bar
+    NaviBar
   },
   data () {
     return {
-      barKey: true
+      NaviBarKey: true
     }
   },
   methods: {
@@ -37,9 +37,9 @@ export default {
     '$route.path': function (newVal) {
       //里面有路由的信息，根据路由信息做相关处理            
       if (newVal == '/list') {
-        this.barKey = false;
+        this.NaviBarKey = false;
       } else {
-        this.barKey = true;
+        this.NaviBarKey = true;
       }
     }
   },

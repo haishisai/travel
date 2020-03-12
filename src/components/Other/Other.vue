@@ -8,16 +8,16 @@
       ref="abc" 
       v-bind:class="{ big : ifshow }" 
       ></div>
-      <GoHome />
+      <ToHome />
     </div>
 </template>
 <script>
     // @ is an alias to /src
-    import GoHome from '@/components/app/GoHome.vue'
+    import ToHome from '@/components/app/ToHome.vue'
     export default {  
         name: 'test',
         components: {
-            GoHome
+            ToHome
         },  
         data () {
             return {

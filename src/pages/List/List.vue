@@ -1,16 +1,16 @@
 <template>
     <div class="list">
         <div>这里是 list.vue</div>
-        <GoHome msg="111" />
+        <ToHome msg="111" />
     </div>
 </template>
 <script>
 // @ is an alias to /src
-import GoHome from '@/components/app/GoHome.vue'
+import ToHome from '@/components/app/ToHome.vue'
 export default {
     name: 'list',
     components: {
-        GoHome
+        ToHome
     }
 }
 </script>
