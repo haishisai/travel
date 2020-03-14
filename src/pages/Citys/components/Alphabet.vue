@@ -1,5 +1,5 @@
 <template>
-  <div class="box" >
+  <div class="box">
     <ul>
       <li>A</li>
       <li>A</li>
@@ -13,7 +13,7 @@
 // @ is an alias to /src
 
 export default {
-    name: 'Alphabat',
+  name: 'Alphabat',
 
 }
 </script>
@@ -22,5 +22,10 @@ export default {
 .box
   position absolute
   z-index 100
+  right 0.1rem
+  top 1.5rem
+  ul
+    li
+      color $bgColor
 </style>
 
