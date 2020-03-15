@@ -14,11 +14,11 @@
 <script>
     // @ is an alias to /src
     import ToHome from '@/components/app/ToHome.vue'
-    export default {  
+    export default {
         name: 'test',
         components: {
             ToHome
-        },  
+        },
         data () {
             return {
                 ifshow : true

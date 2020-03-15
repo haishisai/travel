@@ -9,6 +9,7 @@
 </template>
 <script>
 // @ is an alias to /src
+import axios from 'axios'
 import ToHome from '@/components/app/ToHome.vue'
 import Header from './components/Header.vue'
 import Search from './components/Search.vue'
@@ -22,6 +23,11 @@ export default {
         Search,
         CitysList,
         Alphabet
+    },
+    methods: {
+      GetCitysInfo () {
+        // axios.get('')
+      } 
     }
 }
 </script>

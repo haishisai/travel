@@ -6,10 +6,10 @@ module.exports = {
     // publicPath: process.env.NODE_ENV === "production" ? "./" : "/",
     devServer: {
         proxy:{
-            '/travel/dist': {
+            '/dist': {
                 target: 'http://localhost:8080/',
                 pathRewrite:{
-                    '^/travel/dist': ''
+                    '^/dist': ''
                 }
             }
         }
