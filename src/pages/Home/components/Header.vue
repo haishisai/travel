@@ -8,7 +8,7 @@
       输入城市/景点
     </div>
     <div class="header-right">
-      <router-link :to="{name:'Citys'}" >
+      <router-link :to="{name:'City'}" >
         <span class="iconfont icon-jiantou"></span>
         {{city}}
       </router-link>

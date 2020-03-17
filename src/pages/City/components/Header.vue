@@ -7,7 +7,7 @@
 // @ is an alias to /src
 
 export default {
-    name: 'CitysHeader',
+    name: 'CityHeader',
 
 }
 </script>

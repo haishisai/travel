@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <!-- 当前路由地址所对应的内容 -->
-    <router-view />
+    <router-view @nowCity="nowCity" :city="city" />
     <NaviBar
       v-show="NaviBarKey"
       :NaviBarShow="NaviBarKey"
@@ -18,12 +18,17 @@ export default {
   },
   data () {
     return {
-      NaviBarKey: true
+      NaviBarKey: true,
+      city:'初始城市纠错'
     }
   },
   methods: {
     pdclick: function () {
       // console.log('pd')
+    },
+    nowCity (e) {
+      this.city = e
+      console.log(this.city)
     }
   },
   created () {

@@ -42,7 +42,8 @@ export default {
   },
   methods: {
     getHomeInfo () {
-      axios.get("/dist/mock/index.json").then(this.getHomeInfoSucc);
+      axios.get("/dist/mock/index.json").then(this.getHomeInfoSucc)
+      .catch(this.getHomeInfoErr)
       // axios.get("/api/index.json").then(this.getHomeInfoSucc);
     },
     getHomeInfoSucc (res) {
@@ -62,20 +63,33 @@ export default {
         this.rankingData = obj.data.rankingData;
       }
     },
+    getHomeInfoErr () {
+      console.log('err from getHomeInfo')
+    },
+    postNowCity () {
+      this.$emit('nowCity',this.city)
+    }
+  },
+  watch: {
+    '$data.city' : function() {
+      this.postNowCity()
+    }
   },
   created () {
     this.getHomeInfo();
   },
   mounted () {
-    // test
-    // axios.get("http://localhost:3000/flowers")
-    // .then((res)=>{
-    //   console.log(res)
-    // })
-    // .catch((err)=>{
-    //   console.log('错误'+err)
-    // });
+    
   }
+  // mounted () {
+  //   axios.get("http://localhost:3000/flowers")
+  //   .then((res)=>{
+  //     console.log(res)
+  //   })
+  //   .catch((err)=>{
+  //     console.log('错误'+err)
+  //   });
+  // }
 };
 </script>
 <style lang="stylus" scoped>
