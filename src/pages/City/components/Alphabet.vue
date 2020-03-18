@@ -77,7 +77,7 @@ export default {
       color $bgColor
       // background red
       width .5rem
-      padding-left 1rem
+      padding-left .3rem
       height .4rem
       line-height .4rem
       font-size .32rem

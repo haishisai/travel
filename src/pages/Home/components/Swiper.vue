@@ -48,7 +48,7 @@ export default {
     swiperData: Array
   },
   mounted(){
-    console.log(this.swiperData)
+    
   }
 };
 </script>

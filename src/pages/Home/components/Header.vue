@@ -10,7 +10,7 @@
     <div class="header-right">
       <router-link :to="{name:'City'}" >
         <span class="iconfont icon-jiantou"></span>
-        {{city}}
+        {{this.$store.state.city}}
       </router-link>
       
     </div>

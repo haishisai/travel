@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <HomeHeader :city="city" />
+    <HomeHeader />
     <HomeSwiper :swiperData="swiperData" />
     <HomeIcons :iconsData="iconsData" />
     <Ranking :items="rankingData" />
@@ -32,7 +32,6 @@ export default {
   },
   data () {
     return {
-      city: '',
       swiperData: [],
       iconsData: [],
       recommendData: [],
@@ -65,9 +64,6 @@ export default {
     },
     getHomeInfoErr () {
       console.log('err from getHomeInfo')
-    },
-    postNowCity () {
-      this.$emit('nowCity',this.city)
     }
   },
   watch: {

@@ -4,6 +4,7 @@ import fastClick from 'fastclick'
 
 import App from './App.vue'
 import router from './router.js'
+import store from './store/index.js'
 
 import 'styles/reset.css'
 import 'styles/iconfont.css'
@@ -24,5 +25,6 @@ Vue.use(VueAwesomeSwiper)
 
 new Vue({
   router,
+  store,
   render: h => h(App)
 }).$mount('#app')

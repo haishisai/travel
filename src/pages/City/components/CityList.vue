@@ -1,12 +1,13 @@
 <template>
   <div class="box" ref="wrapper" >
+    
     <div>
       <!-- now city -->
       <div class="now-city">
         <div class="title" >当前城市</div>
         <ul class="ul-block border-topbottom">
           <li>
-            <span>{{city}}</span>
+            <span :class="{ red : redKey }" >{{this.$store.state.city}}</span>
           </li>
         </ul>
       </div>
@@ -18,8 +19,13 @@
             v-for="hotItem of hotItems" 
             :key="hotItem.id"  
             class="hot-city-li" 
-            
+            @click="handleCityClick(hotItem.name)"
           >
+            <!-- 这方法ok 再学习新的方法 -->
+            <!-- <router-link :to="{ name : 'Home' }" >
+              <span>{{hotItem.name}}</span>
+            </router-link> -->
+
             <span>{{hotItem.name}}</span>
           </li>
         </ul>
@@ -28,7 +34,13 @@
       <div class="py" v-for="(item, key) of items" :key="item.id" :ref="key" >
         <div class="title" >{{key}}</div>
         <ul class="ul-line ">
-          <li class="hot-city-li border-bottom" v-for="innerItem of item" :key="innerItem.id" >
+          <li 
+            class="hot-city-li border-bottom" 
+            v-for="innerItem of item" 
+            :key="innerItem.id"
+            @click="handleCityClick(innerItem.name)"
+          >
+
             <span>{{innerItem.name}}</span>
           </li>
         </ul>
@@ -42,15 +54,30 @@ import Bscroll from 'better-scroll'
 
 export default {
     name: 'CityList',
+    data () {
+      return {
+        redKey : false
+      }
+    },
     props: {
       items: Object,
       hotItems: Array,
-      city: String,
-      zmbChange: String
+      zmbChange: String,
+    },
+    methods: {
+      handleCityClick (e) {
+        // this.redKey = !this.redKey
+        // this.$store.dispatch('changeCity', e)
+        this.$store.commit('changeCity2', e)
+        // this.$router.push('/') 地址传参
+        this.$router.push({name:'Home'})
+      }
     },
     mounted () {
       this.scroll = new Bscroll(this.$refs.wrapper,{
-        pullUpLoad:true
+        pullUpLoad:true,
+        //better-scroll，默认它会阻止touch事件
+        click: true
       })
     },
     watch:{
@@ -72,6 +99,8 @@ export default {
   top 1.36rem
   left 0
   right 0
+  .red
+    color red
   // background red
   // overflow-y scroll //  其实这样也行 学习新东西
   overflow hidden

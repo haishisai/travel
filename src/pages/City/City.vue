@@ -4,7 +4,7 @@
         <Search :items="cities" />
         <ToHome />
         <!--hotCities:热门城市数据  Cities:城市列表数据     -->
-        <CityList :hotItems="hotCities" :items="cities" :city="city" :zmbChange="zmbChange" />
+        <CityList :hotItems="hotCities" :items="cities" :zmbChange="zmbChange" />
         <Alphabet :items="cities" @change="change" />
     </div>
 </template>
@@ -33,7 +33,6 @@ export default {
         CityList,
         Alphabet
     },
-    props:['city'],
     methods: {
       getCityInfo () {
         axios.get('/dist/mock/city.json')

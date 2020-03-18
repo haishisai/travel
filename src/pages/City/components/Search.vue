@@ -15,6 +15,7 @@
           class="border-bottom"
           v-for="item of listData"
           :key="item.id"
+          @click="handleCityClick(item.name)"
         >
           {{item.name}}
         </li>
@@ -56,7 +57,11 @@ export default {
         res.push(obj)
       }
       this.listData = res
-      console.log(this.listData)
+    },
+    handleCityClick (e) {
+      // this.$store.dispatch('changeCity', e)
+      this.$store.commit('changeCity2', e)
+      this.$router.push({name:'Home'})
     }
   },
   watch: {
@@ -77,7 +82,8 @@ export default {
   },
   mounted () {
     this.scroll = new Bscroll(this.$refs.wrapper, {
-      pullUpLoad: true
+      pullUpLoad: true,
+      click: true
     })
   }
 }
