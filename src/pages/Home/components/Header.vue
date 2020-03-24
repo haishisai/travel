@@ -10,9 +10,8 @@
     <div class="header-right">
       <router-link :to="{name:'City'}" >
         <span class="iconfont icon-jiantou"></span>
-        {{this.$store.state.city}}
+        {{this.$store.state.city.city}}
       </router-link>
-      
     </div>
   </div>
 </template>
@@ -35,6 +34,7 @@ export default {
   .header-left
     float: left
     color: #fff
+    padding 0 0 0 .05rem
   .header-input
     flex: 1
     background: #fff
@@ -53,7 +53,8 @@ export default {
       margin 0 0 .1rem .1rem
   .header-right
     float: right
-    width: 1.24rem
+    min-width: 1.04rem
+    padding 0 .1rem
     text-align: center
     a
       color: #fff

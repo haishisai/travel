@@ -7,7 +7,7 @@
         <div class="title" >当前城市</div>
         <ul class="ul-block border-topbottom">
           <li>
-            <span :class="{ red : redKey }" >{{this.$store.state.city}}</span>
+            <span :class="{ red : redKey }" >{{this.$store.state.city.city}}</span>
           </li>
         </ul>
       </div>
@@ -68,7 +68,7 @@ export default {
       handleCityClick (e) {
         // this.redKey = !this.redKey
         // this.$store.dispatch('changeCity', e)
-        this.$store.commit('changeCity2', e)
+        this.$store.commit('city/changeCity2', e )
         // this.$router.push('/') 地址传参
         this.$router.push({name:'Home'})
       }

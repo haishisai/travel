@@ -20,6 +20,7 @@ import Recommend from "./components/Recommend.vue";
 import Ranking from "./components/Ranking.vue";
 import WhereGo from "./components/WhereGo.vue";
 import axios from "axios";
+// import { mapState } from 'vuex'
 export default {
   name: "Home",
   components: {
@@ -39,9 +40,25 @@ export default {
       rankingData: []
     }
   },
+  computed: {
+    // ...mapState(['city'])
+    // city: function () {
+    //   let str = 1222
+    //   return str
+    // }
+    getDefaultCity () {
+      const t1 = this.$store.state.city
+      return t1
+    },
+    // city 这个单词不能用？？？ 找不到问题出在哪
+    // city () {
+    //   return 111
+    // }
+  },
   methods: {
     getHomeInfo () {
-      axios.get("/dist/mock/index.json").then(this.getHomeInfoSucc)
+      axios.get('/dist/mock/index.json?city=' + this.getDefaultCity.city )
+      .then(this.getHomeInfoSucc)
       .catch(this.getHomeInfoErr)
       // axios.get("/api/index.json").then(this.getHomeInfoSucc);
     },
@@ -67,15 +84,15 @@ export default {
     }
   },
   watch: {
-    '$data.city' : function() {
-      this.postNowCity()
-    }
+    // '$data.city' : function() {
+    //   this.postNowCity()
+    // }
   },
   created () {
-    this.getHomeInfo();
+    
   },
   mounted () {
-    
+    this.getHomeInfo();
   }
   // mounted () {
   //   axios.get("http://localhost:3000/flowers")
