@@ -51,11 +51,12 @@
 .box
   ul
     display flex
+    justify-content space-around
     flex-wrap wrap
     li
       background $bgColor
       width 3rem
-      margin .3rem
+      margin .3rem 0
       height 1.5rem
       line-height 1.5rem
       text-align  center

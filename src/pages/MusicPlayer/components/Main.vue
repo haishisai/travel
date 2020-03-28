@@ -1,6 +1,6 @@
 <template>
   <div class="box">
-    <div class="controller" >
+    <div class="controller">
       <audio
         id="ad"
         src="../../../assets/media/1.mp3"
@@ -13,9 +13,13 @@
       <button onclick="offset-=0.1">微调-0.1</button>
       <button onclick="offset+=0.1">微调+0.1</button>
     </p>
-    <div class="lrc-box" >
-      <ul class="lrc">
-        <li v-for="(item,index) of items " :key="index" >
+    <div class="lrc-box">
+      <ul class="lrc" :style="{ top: lrcTop + 'rem' }">
+        <li
+          v-for="(item,index) of items "
+          :key="index"
+          :class="{active : index == lrcWordIndex }"
+        >
           {{item.words}}
         </li>
       </ul>
@@ -24,23 +28,36 @@
 </template>
 <script>
 import lrc from '../../../assets/media/lrc.js'
-console.log(lrc)
 export default {
   name: 'MusicPlayerMain',
   data () {
     return {
-      items: []
+      items: [],
+      lrcTop: 4,
+      ltcTopDefault: 4,
+      lrcWordIndex: 0
     }
   },
   methods: {
     getLrc () {
       this.items = lrc
     },
-    aaa () {
+    getLrcIndex () {
       let audio = this.$refs.audio
-      audio.ontimeupdate = function () {
-        console.log(1)
-      }
+      let l = this.items.length
+      audio.addEventListener('timeupdate',() => {
+        let time = audio.currentTime // 当前播放的时间
+        for (let i = 0; i < l; i++) {
+          if (this.items[i].time > time) {
+            this.changeLrc(i)
+            this.lrcWordIndex = i-1
+            return 
+          }
+        }
+      })
+    },
+    changeLrc (i) {
+      this.lrcTop = -0.5 * i + this.ltcTopDefault
     }
   },
   watch: {
@@ -48,7 +65,8 @@ export default {
   },
   mounted () {
     this.getLrc()
-    this.aaa()
+    this.getLrcIndex()
+    // this.changeLrc()
   }
 }
 </script>
@@ -64,27 +82,33 @@ export default {
   bottom 0
   .controller
     position fixed
+    z-index 100
     bottom 1rem
     width 100%
     audio
-      font-size .2rem
+      font-size 0.2rem
       margin 0 auto
       width 80%
       margin 0 10%
   .lrc-box
     position relative
     width 98%
-    margin .5rem auto
+    margin 0.5rem auto
     height 12rem
     overflow hidden
     .lrc
       position absolute
       width 100%
+      transition all .8s linear
       // top -1rem
       li
         text-align center
         color #fff
-        font-size .32rem
-        margin .2rem
+        font-size 0.32rem
+        margin 0.2rem
+        height 0.3rem
+        line-height 0.3rem
+      .active
+        color red
 </style>
 
