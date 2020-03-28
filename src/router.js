@@ -4,6 +4,7 @@ import Home from './pages/Home/Home.vue'
 import List from './pages/List/List.vue'
 import City from './pages/City/City.vue'
 import Other from './components/Other/Other.vue'
+import MusicPlayer from './pages/MusicPlayer/MusicPlayer.vue'
 
 Vue.use(Router)
 
@@ -31,6 +32,10 @@ export default new Router({
       path: '/other',
       name: 'Other',
       component: Other
+    },{
+      path: '/musicPlayer',
+      name: 'MusicPlayer',
+      component: MusicPlayer
     }
   ]
 })

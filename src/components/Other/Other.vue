@@ -1,14 +1,23 @@
 <template>
-    <div class="hospital-info">
-      <span>其他</span>
-      <div 
+    <div class="box">
+      <ul>
+        <li>
+          <router-link :to="{name:'MusicPlayer'}" tag="span" >
+            musicPlayer
+          </router-link>
+        </li>
+        <li>xxx</li>
+        <li>xxx</li>
+        <li>xxx</li>
+      </ul>
+      <ToHome />
+      <!-- <div 
       @mouseenter="mouseenter" 
       @mouseleave="mouseleave"  
       class="box" 
       ref="abc" 
       v-bind:class="{ big : ifshow }" 
-      ></div>
-      <ToHome />
+      ></div> -->    
     </div>
 </template>
 <script>
@@ -38,5 +47,19 @@
     }
 </script>
 <style lang="stylus" scoped>
-   
+@import '~styles/varibles.styl'
+.box
+  ul
+    display flex
+    flex-wrap wrap
+    li
+      background $bgColor
+      width 3rem
+      margin .3rem
+      height 1.5rem
+      line-height 1.5rem
+      text-align  center
+      color #fff
+      border-radius .1rem
+      font-size .4rem
 </style>
