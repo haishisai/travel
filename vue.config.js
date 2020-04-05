@@ -20,5 +20,17 @@ module.exports = {
           'styles': path.join(__dirname, 'src/assets/styles')
         }
       }
-    }
+    },
+    module: {
+      rules: [{
+          test: /\.(png)$/,
+          use:{
+              loader: 'file-loader',
+              options: {
+                  name: '[name].[ext]',
+                  outputPath: 'images/'
+              }
+          }
+      }]
+    },
 }

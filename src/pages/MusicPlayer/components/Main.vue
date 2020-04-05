@@ -1,19 +1,26 @@
 <template>
   <div class="box">
-    <div class="controller">
-      <audio
-        id="ad"
-        src="../../../assets/media/1.mp3"
-        ref="audio"
-        controls
-        loop
-      ></audio>
-    </div>
-    <p>
+    
+    <!-- <p>
       <button onclick="offset-=0.1">微调-0.1</button>
       <button onclick="offset+=0.1">微调+0.1</button>
-    </p>
-    <div class="lrc-box">
+    </p> -->
+    <div class="header" >
+      <div class="song-btn" @click="showSongList()" >歌曲列表</div>
+      <div class="lrc-btn" @click="showSrc()" >歌词</div>
+    </div>
+
+    <ul class="song-list" v-show="showKey == 1" >
+      <li v-for="(item, index) of songData" 
+        @click="changeSong(item.src)"
+        :key="index" 
+      >
+        {{item.name}}  
+      </li>
+    </ul>
+
+
+    <div class="lrc-box" v-show="showKey == 2" >
       <ul class="lrc" :style="{ top: lrcTop + 'rem' }">
         <li
           v-for="(item,index) of items "
@@ -24,10 +31,22 @@
         </li>
       </ul>
     </div>
+
+    <div class="controller">
+      <audio
+        id="ad"
+        :src="`/dist/media/${songName}.mp3`"
+        ref="audio"
+        controls
+        loop
+      ></audio>
+
+    </div>
   </div>
 </template>
 <script>
-import lrc from '../../../assets/media/lrc.js'
+import lrc from './lrc.js'
+import axios from 'axios'
 export default {
   name: 'MusicPlayerMain',
   data () {
@@ -35,11 +54,15 @@ export default {
       items: [],
       lrcTop: 4,
       ltcTopDefault: 4,
-      lrcWordIndex: 0
+      lrcWordIndex: 0,
+      songName: 'nndj',
+      showKey: 1,
+      songData: []
     }
   },
   methods: {
     getLrc () {
+      // let lrc = require('./')
       this.items = lrc
     },
     getLrcIndex () {
@@ -58,15 +81,54 @@ export default {
     },
     changeLrc (i) {
       this.lrcTop = -0.5 * i + this.ltcTopDefault
+    },
+    getSongInfo () {
+      axios.get('/dist/mock/music.json')
+      .then(this.getSongInfoSucc)
+      .then(this.getLrcInfo)
+      .catch(this.getSongInfoErr)
+    },
+    getSongInfoSucc (res) {
+      this.songData = res.data.data
+    },
+    // 获取歌词
+    getLrcInfo () {
+      let newArr = this.songData.filter((item) => {
+        return item.src == this.songName
+      })
+      axios.get('/dist/mock/'+ newArr[0].lrcSrc +'.json')
+      .then(this.getLrcInfoSucc)
+      .catch(this.getLrcInfoErr)
+    },
+    getLrcInfoSucc (res) {
+      var newLrc = lrc(res.data.data[0].lrc)
+      this.items = newLrc
+      // 有了歌词后 才能动画歌词
+      this.getLrcIndex()
+    },
+    // 换歌
+    changeSong (e) {
+      this.songName = e
+      console.log(e)
+      let audio = this.$refs.audio
+      setTimeout(()=>{
+        audio.play()
+      },0)
+      //换歌词
+      this.getLrcInfo()
+    },
+    showSongList(){
+      this.showKey = 1
+    },
+    showSrc(){
+      this.showKey = 2
     }
   },
   watch: {
 
   },
   mounted () {
-    this.getLrc()
-    this.getLrcIndex()
-    // this.changeLrc()
+    this.getSongInfo()
   }
 }
 </script>
@@ -80,6 +142,25 @@ export default {
   left 0
   right 0
   bottom 0
+  color #fff
+  .song-list
+    li
+      background #BC2A2A
+      margin .1rem
+      height .8rem
+      line-height .8rem
+      padding 0 0 0 .2rem
+  .header
+    display flex
+    padding .1rem
+    div
+      flex 1
+      color #fff
+      text-align center
+      background #B82525
+      height 1rem
+      line-height 1rem
+      margin .1rem
   .controller
     position fixed
     z-index 100
