@@ -21,16 +21,11 @@ module.exports = {
         }
       }
     },
-    module: {
-      rules: [{
-          test: /\.(png)$/,
-          use:{
-              loader: 'file-loader',
-              options: {
-                  name: '[name].[ext]',
-                  outputPath: 'images/'
-              }
-          }
-      }]
+    chainWebpack: config => {
+      config.module
+        .rule('lrc')
+        .test(/\.lrc$/)
+        .use('file-loader')
+        .loader('file-loader')
     },
 }

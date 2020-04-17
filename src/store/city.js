@@ -26,7 +26,7 @@ export default {
       state.city = city
       try {
         localStorage.city = city
-      } catch(e) {console.log('默认城市'+e)}
+      } catch(e) {console.log('store 默认城市'+e)}
       
     }
   }

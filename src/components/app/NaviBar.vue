@@ -1,6 +1,8 @@
 <template>
   <div class="bar">
     <div>
+      <!-- 详情页  -->
+      <!-- <router-link :to="{name:'movie-detail', params:{id:movie._id}}"> -->
       <router-link
         :to="{name:'Home'}"
         class="rl"
