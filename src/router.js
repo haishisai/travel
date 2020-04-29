@@ -5,6 +5,7 @@ import List from './pages/List/List.vue'
 import City from './pages/City/City.vue'
 import Other from './components/Other/Other.vue'
 import MusicPlayer from './pages/MusicPlayer/MusicPlayer.vue'
+import LoadingImages from './pages/LoadingImages/LoadingImages.vue'
 
 Vue.use(Router)
 
@@ -36,6 +37,10 @@ export default new Router({
       path: '/musicPlayer',
       name: 'MusicPlayer',
       component: MusicPlayer
+    },{
+      path: '/loadingimages',
+      name: 'LoadingImages',
+      component: LoadingImages
     }
   ]
 })

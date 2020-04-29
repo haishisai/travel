@@ -6,7 +6,11 @@
             musicPlayer
           </router-link>
         </li>
-        <li>xxx</li>
+        <li>
+          <router-link to="/loadingimages" tag="span" >
+            LoadingImages
+          </router-link>
+        </li>
         <li>xxx</li>
         <li>xxx</li>
       </ul>

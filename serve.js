@@ -11,16 +11,16 @@ app.get('/flowers', (req, res) => {
         code: 0,
         obj: [
             {
-                CnName:'荷花',
-                EnName: 'lotus'
+                CnName:'111',
+                EnName: 'rank1'
             },
             {
-                CnName:'康乃馨',
-                EnName: 'carnations'
+                CnName:'222',
+                EnName: 'rank2'
             },
             {
-                CnName:'牡丹',
-                EnName: 'peony'
+                CnName:'333',
+                EnName: 'rank3'
             }
         ]
     })
@@ -28,3 +28,5 @@ app.get('/flowers', (req, res) => {
 app.listen(3000, () => {
     console.log('server start at 3000');
 })
+
+// nodemon serve.js
