@@ -24,7 +24,8 @@ export default {
   data () {
     return {
       touchStatus: false,
-      activeKey: ''
+      activeKey: '',
+      timer: null //节流用
     }
   },
   computed: {
@@ -49,14 +50,26 @@ export default {
       this.touchStatus = true
     },
     handleTouchMove (e) {
-      e.stopImmediatePropagation()  // 移动 触摸 阻止冒泡？
+      // e.stopImmediatePropagation()  // 移动 触摸 阻止冒泡？ 没用
       if (this.touchStatus) {
-        const h = this.$refs['box'].getElementsByTagName('li')[0].offsetHeight
-        const startY = this.$refs['box'].offsetTop
-        const touchY = e.touches[0].clientY
-        const index = Math.floor( (touchY - startY) / h ) 
-        this.activeKey = this.zmArr[index]
-        this.changeZ(this.activeKey)
+        // 节流  在触发过程中再次触发 那么把上次行动取消
+        // 实际效果不好 不如不用  拖动过快 会没有反应
+        if(this.timer){
+          clearTimeout(this.timer)
+          console.log(111)
+        }
+        this.timer = setTimeout(() => {
+          // 容器高度
+          const h = this.$refs['box'].getElementsByTagName('li')[0].offsetHeight
+          // 距离上层容器的距离
+          const startY = this.$refs['box'].offsetTop
+          const touchY = e.touches[0].clientY
+          const index = Math.floor( (touchY - startY) / h ) 
+          this.activeKey = this.zmArr[index]
+          this.changeZ(this.activeKey)
+        },16);
+
+        
       }
     },
     handleTouchEnd () {
