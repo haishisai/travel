@@ -11,7 +11,11 @@
             LoadingImages
           </router-link>
         </li>
-        <li>xxx</li>
+        
+          <a href="http://localhost:8080/test.html">
+            <li>普通a标签</li>
+          </a>
+        
         <li>xxx</li>
       </ul>
       <ToHome />

@@ -22,7 +22,6 @@ export default {
       // if (city === '您搜索的地方不存在') {
       //   return
       // }
-      
       state.city = city
       try {
         localStorage.city = city

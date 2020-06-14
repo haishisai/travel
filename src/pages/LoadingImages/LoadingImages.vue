@@ -38,7 +38,7 @@ export default {
     }
   },
   mounted () {
-    axios.get("http://localhost:3000/flowers")
+    axios.get("http://localhost:3000/img")
       .then((res) => {
         this.getData(res)
       })
