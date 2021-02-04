@@ -35,7 +35,7 @@ export default {
     },
     methods: {
       getCityInfo () {
-        axios.get('/dist/mock/city.json')
+        axios.get('/api/city.json')
         .then(this.getCityInfoSucc)
         .catch(this.getCityInfoErr)
       },
@@ -54,7 +54,7 @@ export default {
         this.zmbChange = e
       }
     },
-    mounted () {
+    created () {
       this.getCityInfo()
     }
 }
