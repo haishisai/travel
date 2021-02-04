@@ -12,7 +12,7 @@
           </router-link>
         </li>
         
-          <a href="/test.html">
+          <a href="http://localhost:8080/test.html">
             <li>普通a标签</li>
           </a>
         
