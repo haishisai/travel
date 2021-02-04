@@ -35,7 +35,7 @@
     <div class="controller">
       <audio
         id="ad"
-        :src="`/dist/media/${songName}.mp3`"
+        :src="`/media/${songName}.mp3`"
         ref="audio"
         controls
         loop
@@ -83,7 +83,7 @@ export default {
       this.lrcTop = -0.5 * i + this.ltcTopDefault
     },
     getSongInfo () {
-      axios.get('/dist/mock/music.json')
+      axios.get('/api/music.json')
       .then(this.getSongInfoSucc)
       .then(this.getLrcInfo)
       .catch(this.getSongInfoErr)
@@ -96,7 +96,7 @@ export default {
       let newArr = this.songData.filter((item) => {
         return item.src == this.songName
       })
-      axios.get('/dist/mock/'+ newArr[0].lrcSrc +'.json')
+      axios.get('/api/'+ newArr[0].lrcSrc +'.json')
       .then(this.getLrcInfoSucc)
       .catch(this.getLrcInfoErr)
     },
@@ -113,7 +113,7 @@ export default {
       let audio = this.$refs.audio
       setTimeout(()=>{
         audio.play()
-      },0)
+      },20)
       //换歌词
       this.getLrcInfo()
     },
