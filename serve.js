@@ -1,7 +1,7 @@
-let express = require('express');
-let app = express();
+var express = require('express');
+var cors = require('cors');  // 引入cors 中间件，解决跨域   npm install express cors --save
 
-let cors = require('cors');  // 引入cors 中间件，解决跨域   npm install express cors --save
+var app = express();
 app.use(cors());
 
 // 前端发送的是get请求，接口是flowers. 返回的数据code 表示成功或失败，obj 表示数据
